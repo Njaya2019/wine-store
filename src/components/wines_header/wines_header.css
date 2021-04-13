@@ -1,11 +1,10 @@
-.wines_header_container{
-    border: 1px solid rgba(0, 0, 0, 0.2);
+.wines_right_header_container{
     margin: 5px 15px 0 15px;
     border-radius: 5px;
 }
 
 @media (max-width: 768px){
-    .wines_header_container{
+    .wines_right_header_container{
         margin: 5px 0px 0px 0px;
     }
 }

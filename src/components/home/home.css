@@ -1,7 +1,49 @@
 .home_container{
-    border: 1px solid rgba(255, 0, 0, 1);
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 150px auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px auto;
+    grid-column-gap: 5px;
     grid-row-gap: 5px;
+    grid-template-areas: 
+    "left-header right-header"
+    "wines-body wines-body";
+    padding: 5px;
+}
+
+.left_header{
+    grid-area: left-header;
+    border: 1px solid brown;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
+.right_header{
+    grid-area: right-header;
+    border: 1px solid purple;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.wines_body{
+    grid-area: wines-body;
+}
+
+@media (max-width: 768px){
+    .home_container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px auto 100px;
+        grid-template-areas: 
+        "left-header"
+        "wines-body"
+        "right-header";
+    }
+    .left_header{
+        margin-left: 0px;
+
+    }
+    
+    .right_header{
+        margin-right: 0px;
+    }
 }
