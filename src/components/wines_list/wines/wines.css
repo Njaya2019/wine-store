@@ -23,8 +23,9 @@
 
 /* Left container, wine image */
 .image_container{
-   background-size: cover !important;
+   background-size: contain !important;
    background-repeat: no-repeat !important;
+   background-position: center;
    border-radius: 5px;
    grid-area: wine-image;
 }

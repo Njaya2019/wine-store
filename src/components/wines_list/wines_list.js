@@ -1,35 +1,42 @@
 import React, { Component } from 'react';
 import style from './wines_list.css';
 import { connect } from 'react-redux';
-import { getAllWines } from '../../actions/index';
+import { getAllWines, getWinesByType } from '../../actions/index';
 import Wines from './wines/wines';
 import { bindActionCreators } from 'redux'
 
 class WinesLists extends Component{
-    componentWillMount(){
-        this.props.getAllWines()
+    UNSAFE_componentWillMount(){
+        if(!this.props.wineType){
+            this.props.getAllWines()
+        }
+        else{
+
+        }
     }
 
     render(){
-        console.log(this.props)
+        console.log(this.props.wineType)
         return(
             <div>
-                <Wines />
+                <Wines 
+                    wineType={this.props.wineType}
+                    wines={this.props.wines.wines} 
+                />
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         wines: state.wines
     }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
     return bindActionCreators(
-           {getAllWines}, dispatch
+           {getAllWines,getWinesByType}, dispatch
         )
 }
 

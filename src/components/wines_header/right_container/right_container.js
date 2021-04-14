@@ -13,7 +13,7 @@ const RightHeader = (props) => {
                 /* displays the number of items 
                 added to cart and their total price */
             }
-            <div class={style.cartinfo_checkoutprice_container}>
+            <div className={style.cartinfo_checkoutprice_container}>
                 {/* number of cart items */}
                 <div className={style.cart_info_container}>
                     <div className={style.empty_cart}

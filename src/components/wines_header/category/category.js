@@ -12,11 +12,16 @@ class Category extends Component{
     // }
 
     state = {
-        bgColor: 'grey'
+        bgColor: 'grey',
+        // wineType: ''
     }
 
     btnClicked = (e) =>{
-        this.setState({bgColor: this.state.bgColor=='grey'? 'red': 'grey'})
+        // console.log(e.target.textContent)
+        this.setState({
+            bgColor: this.state.bgColor=='grey'? 'red': 'grey',
+            // wineType: e.target.textContent
+        })
     }
     
     render(){
@@ -25,7 +30,7 @@ class Category extends Component{
             
             <div 
             style={{backgroundColor: this.state.bgColor}} 
-            onClick={this.btnClicked}
+            onClick={this.props.onCatClicked}
             // className={
             //     style.catdiv, divState ? style.selected:null
             // }

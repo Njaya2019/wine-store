@@ -17,6 +17,10 @@ export default function(state={}, action){
 
             return {...state, wines: action.payload}
 
+        case 'WINES_BY_TYPE':
+
+                return {...state, wines: action.payload}
+
         default:
 
             return state

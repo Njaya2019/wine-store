@@ -19,3 +19,19 @@ export function getAllWines(){
         payload: response
     }
 }
+
+export function getWinesByType(wineType){
+
+    const response = axios.get(`${URL}`)
+                    .then(response =>{
+                        return response.data
+                    }).catch(error=>{
+                        return error.response.data
+                    })
+    console.log(response)
+
+    return{
+        type: 'WINES_BY_TYPE',
+        payload: response
+    }
+}
