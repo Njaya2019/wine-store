@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import style from './wines_list.css';
 import { connect } from 'react-redux';
-import Wines from './wines/wines'
+import { getAllWines } from '../../actions/index';
+import Wines from './wines/wines';
+import { bindActionCreators } from 'redux'
 
-class Wines_Lists extends Component{
+class WinesLists extends Component{
+    componentWillMount(){
+        this.props.getAllWines()
+    }
 
     render(){
+        console.log(this.props)
         return(
             <div>
                 <Wines />
@@ -14,10 +20,17 @@ class Wines_Lists extends Component{
     }
 }
 
-// const mapStateToProps = (state, ownProps) => {
-//     return {
-//         prop: state.prop
-//     }
-// }
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+        wines: state.wines
+    }
+}
 
-export default connect(null, null)(Wines_Lists)
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return bindActionCreators(
+           {getAllWines}, dispatch
+        )
+}
+
+export default connect(mapStateToProps , mapDispatchToProps)(WinesLists)

@@ -165,7 +165,7 @@
 
 .right_wine_container .cart_details_container .cart_container{
     border: 1px solid rgba(0, 0, 0, 0.4);
-    background-color:  rgba(51, 153, 102, 1);;
+    background-color:  rgba(51, 153, 102, 1);
     border-radius: 5px;
     cursor: pointer;
     display: flex;

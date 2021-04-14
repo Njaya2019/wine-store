@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './home.css'
-import Wines_list from '../wines_list/wines_list';
+import Wineslist from '../wines_list/wines_list';
 import LeftHeader from '../wines_header/wines_header';
 import RightHeader from '../wines_header/right_container/right_container';
 
@@ -15,7 +15,7 @@ const Home = () => {
                 <RightHeader />
             </div>
             <div className={style.wines_body}>
-                <Wines_list />
+                <Wineslist />
             </div>
 
             

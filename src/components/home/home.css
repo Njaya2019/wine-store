@@ -12,16 +12,22 @@
 
 .left_header{
     grid-area: left-header;
-    border: 1px solid brown;
+    /* border: 1px solid brown; */
     margin-left: 15px;
     border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
 }
 
 .right_header{
     grid-area: right-header;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     margin-right: 15px;
     border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0
 }
 
 .wines_body{

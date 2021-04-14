@@ -1,10 +1,44 @@
-.wines_right_header_container{
-    margin: 5px 15px 0 15px;
+.wines_left_header_container{
     border-radius: 5px;
+    /* border: 1px solid blue; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20px 70px;
+    grid-row-gap: 2px;
+}
+
+.showme_showall{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.showme{
+    background-color: grey;
+    border: 1px solid grey;
+    padding: 1px;
+}
+
+.showall{
+    background-color: rgba(51, 153, 102, 1);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+
+.category_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 60px));
+    grid-template-rows: 30px 30px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
 }
 
 @media (max-width: 768px){
-    .wines_right_header_container{
+    .wines_left_header_container{
         margin: 5px 0px 0px 0px;
     }
 }
