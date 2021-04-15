@@ -19,8 +19,8 @@ class LeftHeader extends Component{
                     <Category onCatClicked={this.props.handleCategoryClicked} categoryname='white' />
                     <Category onCatClicked={this.props.handleCategoryClicked} categoryname='red' />
                     <Category onCatClicked={this.props.handleCategoryClicked} categoryname='sparkling' />
-                    <Category onCatClicked={this.props.handleCategoryClicked} categoryname='price' />
                     <Category onCatClicked={this.props.handleCategoryClicked} categoryname='vintage' />
+                    <Category onCatClicked={this.props.handleCategoryClicked} categoryname='All wines' />
                 </div>
             </div>
         )

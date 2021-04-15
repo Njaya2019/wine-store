@@ -11,7 +11,6 @@ class Home extends Component {
     }
 
     handleCategoryClicked = (e) =>{
-        // console.log(e.target.textContent)
         this.setState({
             categoryValue: e.target.textContent
         })

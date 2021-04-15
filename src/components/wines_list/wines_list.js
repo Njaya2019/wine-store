@@ -6,17 +6,17 @@ import Wines from './wines/wines';
 import { bindActionCreators } from 'redux'
 
 class WinesLists extends Component{
-    UNSAFE_componentWillMount(){
-        if(!this.props.wineType){
-            this.props.getAllWines()
-        }
-        else{
 
-        }
+    UNSAFE_componentWillMount(){
+        this.props.getAllWines()
+    }
+
+    componentDidUpdate(){
+        this.props.wineType?this.props.getWinesByType(this.props.wineType):this.props.getAllWines()
     }
 
     render(){
-        console.log(this.props.wineType)
+        
         return(
             <div>
                 <Wines 
@@ -26,6 +26,7 @@ class WinesLists extends Component{
             </div>
         )
     }
+
 }
 
 const mapStateToProps = (state) => {

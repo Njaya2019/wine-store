@@ -5,7 +5,7 @@ const Footer = () =>{
 
     return(
         <div className={styles.footer_wrapper}>
-            Footer
+         &copy; wine store. All rights reserved
         </div>
     )
 }
