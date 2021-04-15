@@ -23,10 +23,16 @@ export function getWinesByType(wineType){
 
     const response = axios.get(`${URL}`)
                     .then(response =>{
-                        const filteredWines = response.data.filter((wine)=>{
-                            return wine.tags.includes(wineType)
-                        })
-                        return filteredWines
+                        if(wineType === 'All wines')
+                        {
+                            return response.data
+                        }
+                        else{
+                            const filteredWines = response.data.filter((wine)=>{
+                                return wine.tags.includes(wineType)
+                            })
+                            return filteredWines
+                        }
                     }).catch(error=>{
                         return error.response.data
                     })
