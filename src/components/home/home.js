@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
 import style from './home.css'
-import Wineslist from '../wines_list/wines_list';
+import WinesLists from '../wines_list/wines_list';
 import LeftHeader from '../wines_header/wines_header';
 import RightHeader from '../wines_header/right_container/right_container';
+import { connect } from 'react-redux';
+import { getAllWines, getWinesByType } from '../../actions/index';
+import { bindActionCreators } from 'redux'
 
 class Home extends Component {
 
+
     state = {
         categoryValue: null
+    }
+
+    UNSAFE_componentWillMount(){
+        this.props.getAllWines()
     }
 
     handleCategoryClicked = (e) =>{
@@ -16,6 +24,9 @@ class Home extends Component {
         })
     }
 
+    UNSAFE_componentWillUpdate(){
+        this.props.getWinesByType(this.state.categoryValue)
+    }
     render(){
         return (
             <div className={style.home_container}>
@@ -26,11 +37,23 @@ class Home extends Component {
                     <RightHeader />
                 </div>
                 <div className={style.wines_body}>
-                    <Wineslist wineType={this.state.categoryValue} />
+                    <WinesLists wines={this.props.wines.wines} />
                 </div>   
             </div>
         )
     }
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+        wines: state.wines
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators(
+           {getAllWines,getWinesByType}, dispatch
+        )
+}
+
+export default connect(mapStateToProps , mapDispatchToProps)(Home)

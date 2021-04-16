@@ -23,7 +23,7 @@ export function getWinesByType(wineType){
 
     const response = axios.get(`${URL}`)
                     .then(response =>{
-                        if(wineType === 'All wines')
+                        if(wineType === 'All wines' || wineType === null)
                         {
                             return response.data
                         }

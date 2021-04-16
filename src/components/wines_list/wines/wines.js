@@ -2,6 +2,17 @@ import React from 'react';
 import style from './wines.css'
 
 const Wines = (props) => {
+
+    const handleDetailsCliked = (e)=>{
+        
+        e.target.children[0].style.display = 'grid'
+        
+    }
+    const handleCloseDetailsContainer = (e) =>{
+       
+        e.target.parentNode.parentNode.style.display = 'none'
+
+    }
     return (
         <div className={style.wines_container}>
             {props.wines && props.wines.length > 0?
@@ -56,9 +67,22 @@ const Wines = (props) => {
                             </div>
                         </div>
 
-                        <div className={style.cart_details_container}>
-                            <div className={style.details_container}>
+                        <div 
+                         className={style.cart_details_container}
+                        >
+                            <div 
+                                className={style.details_container}
+                                onClick={handleDetailsCliked}
+                            >
                                 Details
+                                <div className={style.details}>
+                                    <div className={style.close_button}>
+                                        <span
+                                          onClick={handleCloseDetailsContainer}
+                                        >&#10005;</span>
+                                    </div>
+                                    <div>{wineItem.details}</div>
+                                </div>
                             </div>
                             <div className={style.cart_container}>
                                 Add to cart

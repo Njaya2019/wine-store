@@ -162,7 +162,38 @@
     color: black;
     font-size: 13px;
     font-weight: bolder;
+    position: relative;
 }
+
+.right_wine_container .cart_details_container .details_container .details{
+    display: grid;
+    grid-template-columns: minmax(150px, 200px);
+    grid-template-rows: auto auto;
+    position: absolute;
+    left: 0px;
+    top: -150px;
+    background-color: rgba(51, 153, 102, 1);
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.close_button{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.close_button span{
+    transition: 0.4s ease-in-out;
+}
+.close_button span:hover{
+    color: rgba(255, 0, 0, 0.8);
+}
+
+
 
 .right_wine_container .cart_details_container .cart_container{
     border: 1px solid rgba(0, 0, 0, 0.4);
