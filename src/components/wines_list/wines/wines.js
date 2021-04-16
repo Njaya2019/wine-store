@@ -6,11 +6,13 @@ const Wines = (props) => {
     const handleDetailsCliked = (e)=>{
         
         e.target.children[0].style.display = 'grid'
+        e.stopPropagation()
         
     }
     const handleCloseDetailsContainer = (e) =>{
        
         e.target.parentNode.parentNode.style.display = 'none'
+        e.stopPropagation()
 
     }
     return (
