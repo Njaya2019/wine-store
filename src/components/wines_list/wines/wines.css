@@ -1,0 +1,316 @@
+.wines_container{
+    margin: 0 15px 0 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 310px);
+    grid-auto-rows: 210px;
+    grid-column-gap: 7px;
+    grid-row-gap: 5px;
+    padding: 10px;
+}
+
+.wine_container{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 130px 180px;
+    grid-auto-rows: auto;
+    grid-template-areas: 
+    "wine-image wine-price-details";
+    /* border: 1px solid olivedrab; */
+}
+
+/* Left container, wine image */
+.image_container{
+   background-size: contain !important;
+   background-repeat: no-repeat !important;
+   background-position: center;
+   border-radius: 5px;
+   grid-area: wine-image;
+}
+
+/* Right conatiner, wine price details */
+.right_wine_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 100px 50px;
+    grid-row-gap: 4px;
+    grid-area: wine-price-details;
+    /* border: 1px solid tomato; */
+}
+
+/* =========================================
+            Wine name container
+=============================================*/
+/* .right_wine_container .name_container{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+} */
+.name_container h1{
+    font-size: 20px;
+    color: rgba(153, 102, 51, 0.6);
+}
+
+/* =========================================
+            Case and bottle container
+=============================================*/
+.right_wine_container .bottle_case_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+    padding: 2px;
+}
+
+/* =========================================
+            Bottle container
+=============================================*/
+.bottle_case_container .bottle_container{
+   border-right: 2px solid rgba(0, 0, 0, 0.5);
+   border-right-style: dotted;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr 1fr;
+}
+
+.bottle_case_container .bottle_container .bottle_and_price{
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.bottle_case_container .bottle_container .bottle_and_price .bottle{
+    text-align: center;
+}
+
+.bottle_case_container .bottle_container .bottle_and_price .bottle_price{
+    text-align: center;
+    font-weight: bolder;
+}
+
+.bottle_case_container .bottle_container .bottle_quantity{
+    display: grid;
+    grid-template-columns: 40px 40px;
+    grid-column-gap: 2px;
+}
+
+.bottle_case_container .bottle_container .bottle_quantity span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* =========================================
+            Case container
+=============================================*/
+.bottle_case_container .case_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* border: 1px solid green; */
+}
+
+.bottle_case_container .case_container .case_and_price{
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.bottle_case_container .case_container .case_and_price .case{ 
+    text-align: center;
+}
+
+.bottle_case_container .case_container .case_and_price .case_price{
+    text-align: center;
+    font-weight: bolder;
+}
+.bottle_case_container .case_container .case_quantity{
+    display: grid;
+    grid-template-columns: 40px 40px;
+    grid-column-gap: 2px;
+}
+
+.bottle_case_container .case_container .case_quantity span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* =========================================
+            Cart and details container
+=============================================*/
+.right_wine_container .cart_details_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px;
+    grid-column-gap: 5px;
+    padding: 5px;
+}
+
+.right_wine_container .cart_details_container .details_container{
+    border: 1px solid grey;
+    background-color: grey;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 13px;
+    font-weight: bolder;
+    position: relative;
+}
+
+.right_wine_container .cart_details_container .details_container .details{
+    display: grid;
+    grid-template-columns: minmax(150px, 200px);
+    grid-template-rows: auto auto;
+    position: absolute;
+    left: 0px;
+    top: -150px;
+    background-color: rgba(51, 153, 102, 1);
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.close_button{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.close_button span{
+    transition: 0.4s ease-in-out;
+}
+.close_button span:hover{
+    color: rgba(255, 0, 0, 0.8);
+}
+
+
+
+.right_wine_container .cart_details_container .cart_container{
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background-color:  rgba(51, 153, 102, 1);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+/* =========================================
+            Media queries
+=============================================*/
+@media (max-width: 768px){
+    .wines_container{
+        grid-template-columns: repeat(auto-fill, minmax(150px, 250px));
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        padding: 10px 0px 10px 0px;
+        text-align: center;
+        margin: 0;
+    }
+    .wine_container{
+        border: none;
+    }
+    .right_wine_container .name_container{
+        border: none;
+    }
+    .name_container h1{
+        font-size: 17px;
+        color: rgba(153, 102, 51, 0.6);
+    }
+    .wine_container{
+        grid-template-columns: minmax(50px, 130px) minmax(100px, 180px);
+        grid-auto-rows: auto;
+    }
+    .right_wine_container .bottle_case_container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 50px;
+        grid-row-gap: 0px;
+        border: none;
+    }
+    .bottle_case_container .bottle_container{
+        grid-template-columns: 1fr;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+        border-bottom-style: dotted;
+        border-right: none;
+        padding-bottom: 4px;
+    }
+
+    .bottle_case_container .bottle_container .bottle_and_price{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .bottle_case_container .bottle_container .bottle_and_price .bottle{
+        text-align: right;
+        margin-right: 20px;
+        font-size: 13px;
+    }
+    
+    .bottle_case_container .bottle_container .bottle_and_price .bottle_price{
+        text-align: left;
+        font-size: 13px;
+        font-weight: bolder;
+    }
+    
+
+    .bottle_case_container .bottle_container .bottle_quantity{
+        grid-column-gap: 5px;
+        padding-left: 20px;
+    }
+
+    .bottle_case_container .bottle_container .bottle_quantity span{
+        font-size: 13px;
+    }
+
+    .bottle_case_container .case_container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .bottle_case_container .case_container .case_and_price{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .bottle_case_container .case_container .case_and_price .case{ 
+        text-align: right;
+        margin-right: 20px;
+        font-size: 13px;
+    }
+    
+    .bottle_case_container .case_container .case_and_price .case_price{
+        text-align: left;
+        font-size: 13px;
+        font-weight: bolder;
+    }
+
+    .bottle_case_container .case_container .case_quantity{
+        grid-column-gap: 5px;
+        padding-left: 20px;
+    }
+
+    .bottle_case_container .case_container .case_quantity span{
+        font-size: 13px;
+    }
+    .right_wine_container .cart_details_container{
+        border: none;
+    }
+    
+}

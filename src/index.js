@@ -1,17 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+// Connection to redux but not redux
+import { Provider } from 'react-redux';
+// The redux and use middleware to manipulate,
+// data before passing it to the component
+import { createStore, applyMiddleware } from 'redux';
+import promiseMiddleware from 'redux-promise';
+
+// Reducers
+import rootReducer from './reducers/index';
+
+// COMPONENTS
+import Routes from './routes';
+
+const App = () =>{
+
+  return(
+    <BrowserRouter>
+       <Routes/>
+    </BrowserRouter>
+  )
+
+}
+
+// Store prop is the connection between react-redux and redux.
+// we can do this 'store={createStore}' and that's it, but we
+// are going to use middleware too.
+
+// 'createStoreWithMiddleware()' is a function and we will add
+// some arguments in the future. It needs a list reducers, so we
+// will find a way to combine all the reducers first into one.
+// we are doing that in 'reducers/index.js'
+
+const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore)
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={createStoreWithMiddleware(rootReducer)}>
     <App />
-  </React.StrictMode>,
+  </Provider>
+    ,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
