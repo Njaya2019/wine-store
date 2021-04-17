@@ -47,7 +47,7 @@ const Wines = (props) => {
                                 </div>
                                 {/* bottle quantity container */}
                                 <div className={style.bottle_quantity}>
-                                    <input type="number"/>
+                                    <input type="number" min="1"/>
                                     <span>QTY</span>
                                 </div>
 
@@ -55,7 +55,7 @@ const Wines = (props) => {
                             {/* Case container */}
                             <div className={style.case_container}>
                                 {/* case price container */}
-                            <div className={style.case_and_price}>
+                                <div className={style.case_and_price}>
                                     <div className={style.case}>Case</div>
                                     <div className={style.case_price}>
                                         ${wineItem.cost.case}
@@ -63,7 +63,7 @@ const Wines = (props) => {
                                 </div>
                                 {/* case quantity container */}
                                 <div className={style.case_quantity}>
-                                    <input type="number"/>
+                                    <input type="number" min="1"/>
                                     <span>QTY</span>
                                 </div>
                             </div>
@@ -86,7 +86,11 @@ const Wines = (props) => {
                                     <div>{wineItem.details}</div>
                                 </div>
                             </div>
-                            <div className={style.cart_container}>
+                            <div 
+                                data-wineid={wineItem.no} 
+                                className={style.cart_container}
+                                onClick={props.handleAddToCart}
+                            >
                                 Add to cart
                             </div>
 

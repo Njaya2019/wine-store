@@ -5,7 +5,8 @@ import Wines from './wines/wines';
         
         return(
             <div>
-                <Wines 
+                <Wines
+                    handleAddToCart={props.handleAddToCart}
                     wines={props.wines} 
                 />
             </div>
